@@ -1,0 +1,42 @@
+{
+  "manifest_version": "0.3",
+  "name": "note-auto-post",
+  "display_name": "note自動投稿",
+  "version": "1.0.0",
+  "description": "テーマを伝えるだけで、リサーチ・執筆・画像生成・note.comへの下書き保存までをClaude Desktopの会話だけで進められる拡張機能です。",
+  "long_description": "「/note-draft」に続けてテーマを入力すると、記事の執筆から画像生成、note.comへの下書き保存までを会話の中で進めます。初回だけ note_login でブラウザが開くので、ご自身のnote.comアカウントにログインしてください（メールアドレス・パスワードはこの拡張機能には保存されません）。画像生成にはGoogle Gemini APIの無料枠を使用します。設定画面でAPIキーを入力してください。",
+  "author": {
+    "name": "haruto"
+  },
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "0",
+        "GEMINI_API_KEY": "${user_config.gemini_api_key}"
+      }
+    }
+  },
+  "user_config": {
+    "gemini_api_key": {
+      "type": "string",
+      "title": "Gemini APIキー",
+      "description": "画像生成に使用します。https://aistudio.google.com/apikey から無料で取得できます。",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": ["darwin"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "keywords": ["note", "ブログ", "自動投稿", "AI", "副業"],
+  "license": "UNLICENSED"
+}

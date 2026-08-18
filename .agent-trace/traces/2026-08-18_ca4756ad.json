@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "id": "ca4756ad-84cb-4fb4-8d74-e0d9ff2b686f",
+  "timestamp": "2026-08-18T20:34:39.972Z",
+  "files": [
+    {
+      "path": "server/note-poster.js",
+      "conversations": [
+        {
+          "contributor_type": "ai",
+          "model": "anthropic/claude-opus-4-5-20251101",
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": -1
+            }
+          ],
+          "description": "Write: file creation/overwrite"
+        }
+      ]
+    }
+  ],
+  "tool": {
+    "name": "taisun-agent",
+    "version": "2.10.1"
+  },
+  "metadata": {
+    "dev.taisun": {
+      "hook": "agent-trace-capture",
+      "tool_used": "Write"
+    }
+  }
+}

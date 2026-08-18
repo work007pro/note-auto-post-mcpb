@@ -1,0 +1,14 @@
+{
+  "name": "note-auto-post-mcpb",
+  "version": "1.0.0",
+  "description": "テーマを伝えるだけでnote.comへの下書き投稿まで手伝うClaude Desktop拡張機能",
+  "type": "module",
+  "main": "server/index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "playwright": "^1.62.1",
+    "zod": "^3.25.76"
+  }
+}
